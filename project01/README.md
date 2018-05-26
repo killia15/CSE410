@@ -19,14 +19,14 @@ If the first token is the name of a built-in command (listed below), then the pr
 
 If the last token is an ampersand ('&') and the command is an external command, the program will execute the command in the background. That is, the program will not wait until the completion of the given external command before continuing with its processing.
  
-4) The program will recognize the following built-in commands :
- - *quit* terminate the shell process date
- - *display* current date and time
- - *curr* display absolute pathname of current directory
- - *env* display all environment variables
- - *cd* Dir move from the current directory to Dir
- - *hlist* display recent input lines
- - *dlist* display recent directories
+4) The program will recognize the following built-in commands:
+ - `quit` terminate the shell process date
+ - `display` current date and time
+ - `curr` display absolute pathname of current directory
+ - `env` display all environment variables
+ - `cd` Dir move from the current directory to Dir
+ - `hlist` display recent input lines
+ - `dlist` display recent directories
 
 Built-in commands will be completely processed by the program (the program will NOT create a child process to perform the processing).
 
