@@ -22,26 +22,17 @@ If the last token is an ampersand ('&') and the command is an external command, 
 4) The program will recognize the following built-in commands:
  - `quit` terminate the shell process date
  - `display` current date and time
- - `curr` display absolute pathname of current directory
- - `env` display all environment variables
- - `cd` Dir move from the current directory to Dir
+ - `curr` display absolute pathname of current working directory
+ - `env` display all environment variables (such as USER, LOGNAME, PATH, and so on)
+ - `cd Dir` move from the current directory to the relative or absolute pathname Dir.
  - `hlist` display recent input lines
  - `dlist` display recent directories
 
 Built-in commands will be completely processed by the program (the program will NOT create a child process to perform the processing).
 
-4-1) The command `date` will display the current date and time.
-
-4-2) The command `curr` will display the absolute pathname of the current working
-directory.
-
-4-3) The command `env` will display the name and value of all environment variables (such as USER, LOGNAME, PATH, and so on).
-
-4-4) The command `cd Dir` will reset the working directory to be "Dir", where that token must be a relative pathname or an absolute pathname.
-
 The command `cd ~xxx` will reset the working directory to be the home directory of the user with username "xxx". For simplicity, you may assume that all home directories reside in "/user". As a special case, the symbol "~" represents the home directory of the current user.
 
-4-5) The command `hlist` will display the most recent input lines entered by the user (along with the associated sequence number). An example of partial "hlist" output:
+The command `hlist` will display the most recent input lines entered by the user (along with the associated sequence number). An example of partial "hlist" output:
 ```
 197 cd /user/cse410/Projects
 198 curr 199 dtae
@@ -51,7 +42,7 @@ The history list will hold up to ten non-null input lines, including any lines w
    
 The command `!N` will cause the program to use command number N from the history list as its input. The contents of that input line will be displayed before the program processes the command(s) within the line.
 
-4-6) The command `dlist` will display (in reverse order) the most recent directories that were the working directory, along with the associated index. An example of partial "dlist" output:
+The command `dlist` will display (in reverse order) the most recent directories that were the working directory, along with the associated index. An example of partial "dlist" output:
 ```
 1 /user/cse410
 2 /usr/include/sys 3 /usr/include
